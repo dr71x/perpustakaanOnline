@@ -39,13 +39,11 @@ class HomeController extends Controller
             $data['transGuru'] = transaksi::where('level', 'guru')->get()->count();
             return view('home', $data);
         } elseif (\Auth::user()->level == 'guru') {
-            $id = guru::where('user_id', \Auth::user()->id)->value('id');
             $data['pinjam'] = transaksi::where('user_id', \Auth::user()->id)->where('status', 'komfirmasi')->get()->count();
             $data['belum'] = transaksi::where('user_id', \Auth::user()->id)->where('status', 'Belum Komfirmasi')->get()->count();
             $data['selesai'] = transaksi::where('user_id', \Auth::user()->id)->where('status', 'kembali')->get()->count();
             return view('guru.home', $data);
         } elseif (\Auth::user()->level == 'anggota') {
-            $id = guru::where('user_id', \Auth::user()->id)->value('id');
             $data['pinjam'] = transaksi::where('user_id',\Auth::user()->id)->where('status', 'komfirmasi')->get()->count();
             $data['belum'] = transaksi::where('user_id',\Auth::user()->id)->where('status', 'Belum Komfirmasi')->get()->count();
             $data['selesai'] = transaksi::where('user_id',\Auth::user()->id)->where('status', 'kembali')->get()->count();

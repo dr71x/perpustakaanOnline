@@ -14,7 +14,7 @@
             <div class="card-body">
                     {!! Form::model($data, array('route' => $action, 'files' => true, 'method' => $method)) !!}
                     <div class="form-group">
-                        {!! Form::text('NIP', NULL, ['class' => 'form-control','placeholder' => 'Masukkan NIP Anda']) !!}
+                        <input type="text" class="form-control" name="NIP" id="NIP" onkeyup="count_down(this)" placeholder="Ketikkan NIP Disini">
                         <span class="text-helper">{{ $errors->first('NIP') }}</span>
                     </div>
                 <div class="row">
@@ -22,7 +22,7 @@
                         <div class="form-group">
                             {!! Form::text('name', NULL, ['class'=> 'form-control', 'placeholder' => 'Masukkan User Name Di Sini']) !!}
                             <span class="text-helper">{{ $errors->first('name') }}</span>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -82,4 +82,28 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+    <script>
+       function count_down(obj) {
+            var element = document.getElementById('NIP');
+
+            element.innerHTML = obj.value.length;
+
+            if (obj.value.length > 9) {
+                Swal.fire({
+            title: 'MAAF!',
+            text: 'NIP Hanya 9 Angka, Silahkan Cek Lagi Ya :)',
+            icon: 'error',
+            showClass: {
+            popup:'animate__animated animate__shakeX'
+            },
+            hideClass: {
+            popup: 'animate__animated animate__backOutDown'
+            },
+            }
+            )
+            }
+        }
+    </script>
 @endsection

@@ -35,6 +35,14 @@
                                     <td>Tahun Terbit</td>
                                     <td>: {{ $item->tahun }}</td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        Stock Buku
+                                    </td>
+                                    <td>
+                                        : {{ $item->total }}
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                         </p>

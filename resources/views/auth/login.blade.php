@@ -13,12 +13,12 @@
     <div class="wrapper">
         <div class="logo"> <img src="{{ asset('zircos') }}/assets/images/logo.png" alt="">
         </div>
-        <div class="text-center mt-4 name">
-            <h5 align="center">SMPN 2 Kota Jambi</h5>
+        <div class="text-center name" style="margin-top: 20px; margin-bottom:20px;">
+            <h5 align="center" class="mt-4 mb-4">SMPN 2 Kota Jambi</h5>
         </div>
         <form class="p-3 mt-3" method="POST" action="{{ route('login') }}">
             @csrf
-            <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input type="text"
+            <div class="form-field d-flex align-items-center mt-5"> <span class="far fa-user"></span> <input type="text"
                     name="email" id="email" class=" @error('email') is-invalid @enderror" name="email"
                     value="{{ old('email') }}" autocomplete="off" placeholder="E-mail"> </div>
 

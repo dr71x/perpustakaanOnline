@@ -65,7 +65,9 @@
             <!-- LOGO -->
             <div class="topbar-left">
                 <a href="{{ url('/home') }}" class="logo"><img
+
                         src="{{ asset('zircos') }}/assets/images/logo.png" width="30px" alt="">
+
                     SMPN 2 Jambi</a>
             </div>
 
@@ -272,11 +274,11 @@
 
     {{-- fancybox --}}
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-
     {{-- sweetalert --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
         integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    @yield('script')
     <script>
         @if (session('Proses'))
             Swal.fire({

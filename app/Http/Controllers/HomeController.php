@@ -37,6 +37,8 @@ class HomeController extends Controller
             $data['buku'] = buku::get()->count();
             $data['transSiswa'] = transaksi::where('level', 'anggota')->get()->count();
             $data['transGuru'] = transaksi::where('level', 'guru')->get()->count();
+            $data['peminjaman'] = transaksi::where('status','komfirmasi')->get()->count();
+            $data['semuabuku'] = buku::get()->sum('total');
             return view('home', $data);
         } elseif (\Auth::user()->level == 'guru') {
             $data['pinjam'] = transaksi::where('user_id', \Auth::user()->id)->where('status', 'komfirmasi')->get()->count();

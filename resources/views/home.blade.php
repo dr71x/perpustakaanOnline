@@ -91,5 +91,33 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="card card-body" style="box-shadow: 0 10px 15px rgba(0,0,0,0.2);">
+                <h2>Buku Dipinjam</h2>
+                <div class="row">
+                    <div class="col-md-8">
+                        <img
+                            src="https://img.icons8.com/external-justicon-flat-justicon/60/000000/external-book-education-justicon-flat-justicon-2.png" />
+                    </div>
+                    <div class="col-md-4" style="margin-top: -10px;">
+                        <h1 align="right">{{ $peminjaman }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-body" style="box-shadow: 0 10px 15px rgba(0,0,0,0.2);">
+                <h2>Total Buku</h2>
+                <div class="row">
+                    <div class="col-md-8">
+                        <img
+                            src="https://img.icons8.com/external-justicon-flat-justicon/60/000000/external-book-education-justicon-flat-justicon-2.png" />
+                    </div>
+                    <div class="col-md-4" style="margin-top: -10px;">
+                        <h1 align="right">{{ $semuabuku }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

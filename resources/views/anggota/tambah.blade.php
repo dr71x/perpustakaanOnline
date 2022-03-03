@@ -14,7 +14,7 @@
                 <div class="card-body">
                     {!! Form::model($data, ['route' => $action, 'files' => true, 'method' => $method]) !!}
                     <div class="form-group">
-                        {!! Form::text('NIS', null, ['class' => 'form-control', 'placeholder' => 'Masukkan NIS Anda']) !!}
+                        <input type="text" name="NIS" id="NIS" class="form-control" onkeyup="count_down(this)" placeholder="Ketikkan NIS Disini">
                         <span class="text-helper">{{ $errors->first('NIS') }}</span>
                     </div>
                     <div class="row">
@@ -102,4 +102,29 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+       function count_down(obj) {
+            var element = document.getElementById('NIS');
+
+            element.innerHTML = obj.value.length;
+
+            if (obj.value.length > 10) {
+                Swal.fire({
+            title: 'MAAF!',
+            text: 'NIS Hanya 10 Angka, Silahkan Cek Lagi Ya :)',
+            icon: 'error',
+            showClass: {
+            popup:'animate__animated animate__shakeX'
+            },
+            hideClass: {
+            popup: 'animate__animated animate__backOutDown'
+            },
+            }
+            )
+            }
+        }
+    </script>
 @endsection
